@@ -53,27 +53,124 @@ export default function AffiliatePage() {
           </div>
         </section>
 
-        {/* Program Details */}
-        <section className="px-4 py-16 sm:px-6 lg:px-8 bg-gray-50">
+        {/* Digital Stores Section */}
+        <section className="px-4 py-16 sm:px-6 lg:px-8 bg-background border-b border-border">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <div className="mb-16 text-center">
+              <h2 className="text-4xl font-light text-foreground">
+                Our Digital Stores
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                Access our curated collection of books, courses, and resources across multiple categories
+              </p>
+              <div className="mt-2 h-1 w-16 bg-foreground mx-auto"></div>
+            </div>
+
+            {/* Store Categories Grid */}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
+              {/* Student Resources Store */}
+              <div className="border border-border p-6 hover:border-foreground transition-colors">
+                <div className="text-4xl mb-3">📚</div>
+                <h3 className="text-xl font-light text-foreground mb-2">Student Resources</h3>
+                <p className="text-sm text-muted-foreground mb-4">Learning materials and study guides for students</p>
+                <a href="https://topmate.io/sai_royal/2" target="_blank" rel="noopener noreferrer" className="inline-block text-foreground border-b border-foreground hover:text-primary transition-colors text-sm font-light">
+                  Visit Store →
+                </a>
+              </div>
+
+              {/* Business Guides Store */}
+              <div className="border border-border p-6 hover:border-foreground transition-colors">
+                <div className="text-4xl mb-3">💼</div>
+                <h3 className="text-xl font-light text-foreground mb-2">Business Guides</h3>
+                <p className="text-sm text-muted-foreground mb-4">Professional business resources and templates</p>
+                <a href="https://kasinenisai.gumroad.com/" target="_blank" rel="noopener noreferrer" className="inline-block text-foreground border-b border-foreground hover:text-primary transition-colors text-sm font-light">
+                  Visit Store →
+                </a>
+              </div>
+
+              {/* Digital Products Store */}
+              <div className="border border-border p-6 hover:border-foreground transition-colors">
+                <div className="text-4xl mb-3">💻</div>
+                <h3 className="text-xl font-light text-foreground mb-2">Digital Products</h3>
+                <p className="text-sm text-muted-foreground mb-4">Software tools and digital assets for creators</p>
+                <a href="https://topmate.io/sai_royal/2" target="_blank" rel="noopener noreferrer" className="inline-block text-foreground border-b border-foreground hover:text-primary transition-colors text-sm font-light">
+                  Visit Store →
+                </a>
+              </div>
+
+              {/* Web Development Resources */}
+              <div className="border border-border p-6 hover:border-foreground transition-colors">
+                <div className="text-4xl mb-3">🌐</div>
+                <h3 className="text-xl font-light text-foreground mb-2">Web Development</h3>
+                <p className="text-sm text-muted-foreground mb-4">Web design and development resources</p>
+                <a href="https://kasinenisai.gumroad.com/" target="_blank" rel="noopener noreferrer" className="inline-block text-foreground border-b border-foreground hover:text-primary transition-colors text-sm font-light">
+                  Visit Store →
+                </a>
+              </div>
+
+              {/* Marketing & Growth Store */}
+              <div className="border border-border p-6 hover:border-foreground transition-colors">
+                <div className="text-4xl mb-3">📈</div>
+                <h3 className="text-xl font-light text-foreground mb-2">Marketing & Growth</h3>
+                <p className="text-sm text-muted-foreground mb-4">Marketing strategies and growth hacking guides</p>
+                <a href="https://topmate.io/sai_royal/2" target="_blank" rel="noopener noreferrer" className="inline-block text-foreground border-b border-foreground hover:text-primary transition-colors text-sm font-light">
+                  Visit Store →
+                </a>
+              </div>
+
+              {/* Main Store Link */}
+              <div className="border border-border p-6 bg-secondary hover:border-foreground transition-colors">
+                <div className="text-4xl mb-3">🏪</div>
+                <h3 className="text-xl font-light text-foreground mb-2">All Categories</h3>
+                <p className="text-sm text-muted-foreground mb-4">Browse complete catalog of all available resources</p>
+                <a href="https://topmate.io/sai_royal/2" target="_blank" rel="noopener noreferrer" className="inline-block text-foreground border-b border-foreground hover:text-primary transition-colors text-sm font-light">
+                  Explore All →
+                </a>
+              </div>
+            </div>
+
+            {/* Store Links Info */}
+            <div className="border border-border bg-secondary p-8 text-center">
+              <h3 className="text-2xl font-light text-foreground mb-4">Primary Store Links</h3>
+              <div className="flex flex-col md:flex-row justify-center gap-8">
+                <div>
+                  <p className="text-sm text-muted-foreground mb-2">Student & Learning Resources</p>
+                  <a href="https://topmate.io/sai_royal/2" target="_blank" rel="noopener noreferrer" className="text-foreground font-light hover:text-primary transition-colors break-all text-sm">
+                    topmate.io/sai_royal/2
+                  </a>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground mb-2">Business & Professional Resources</p>
+                  <a href="https://kasinenisai.gumroad.com/" target="_blank" rel="noopener noreferrer" className="text-foreground font-light hover:text-primary transition-colors break-all text-sm">
+                    kasinenisai.gumroad.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Program Details */}
+        <section className="px-4 py-16 sm:px-6 lg:px-8 bg-secondary">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-light text-foreground mb-12 text-center">
               Why Join Us?
             </h2>
             <div className="grid gap-8 md:grid-cols-3">
-              <div className="rounded-lg bg-white p-6 shadow-sm">
-                <div className="text-3xl font-bold text-blue-600 mb-2">10%</div>
-                <h3 className="font-semibold text-gray-900">Commission Rate</h3>
-                <p className="mt-2 text-gray-600">Earn 10% commission on every sale you refer</p>
+              <div className="border border-border p-6 bg-background">
+                <div className="text-3xl font-light text-foreground mb-2">₹499</div>
+                <h3 className="font-light text-foreground">Affordable Commission</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Earn commissions by promoting our digital resources</p>
               </div>
-              <div className="rounded-lg bg-white p-6 shadow-sm">
-                <div className="text-3xl font-bold text-blue-600 mb-2">∞</div>
-                <h3 className="font-semibold text-gray-900">Unlimited Earning</h3>
-                <p className="mt-2 text-gray-600">No caps on your earnings. More referrals = more commission</p>
+              <div className="border border-border p-6 bg-background">
+                <div className="text-3xl font-light text-foreground mb-2">∞</div>
+                <h3 className="font-light text-foreground">Unlimited Earning</h3>
+                <p className="mt-2 text-sm text-muted-foreground">No caps on earnings. More promotions = more commission</p>
               </div>
-              <div className="rounded-lg bg-white p-6 shadow-sm">
-                <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
-                <h3 className="font-semibold text-gray-900">Dedicated Support</h3>
-                <p className="mt-2 text-gray-600">Get support and marketing materials anytime</p>
+              <div className="border border-border p-6 bg-background">
+                <div className="text-3xl font-light text-foreground mb-2">24/7</div>
+                <h3 className="font-light text-foreground">Dedicated Support</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Support and marketing materials available anytime</p>
               </div>
             </div>
           </div>

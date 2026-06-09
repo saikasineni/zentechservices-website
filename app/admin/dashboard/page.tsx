@@ -170,6 +170,21 @@ export default function AdminDashboard() {
               </Button>
             </Link>
           </div>
+
+          {/* Book Categories Management */}
+          <div className="border border-border p-8 bg-secondary rounded">
+            <h2 className="text-2xl font-light text-foreground mb-4">
+              Book Categories
+            </h2>
+            <p className="text-muted-foreground text-sm mb-6">
+              Manage affiliate marketing book categories and digital store links.
+            </p>
+            <Link href="/admin/books-management">
+              <Button className="w-full bg-foreground text-background hover:bg-muted-foreground">
+                Manage Categories
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Store Links Section */}

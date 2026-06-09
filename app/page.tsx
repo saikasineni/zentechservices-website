@@ -137,20 +137,41 @@ export default async function Home() {
           <div className="mx-auto max-w-6xl">
             <div className="mb-16 text-center">
               <h2 className="text-4xl font-light text-foreground">
-                Affiliate Marketing
+                Affiliate Marketing & Digital Stores
               </h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                Join our affiliate program and earn commissions. Access our digital stores for exclusive resources and training materials.
+                Join our affiliate program and earn commissions. Explore our digital stores across multiple categories.
               </p>
               <div className="mt-2 h-1 w-16 bg-foreground mx-auto"></div>
             </div>
 
+            {/* Store Categories - Quick Access */}
+            <div className="grid gap-4 md:grid-cols-3 mb-12">
+              <a href="https://topmate.io/sai_royal/2" target="_blank" rel="noopener noreferrer" className="border border-border p-4 hover:border-foreground transition-colors cursor-pointer">
+                <div className="text-3xl mb-2">📚</div>
+                <h4 className="font-light text-foreground text-sm">Student Resources</h4>
+                <p className="text-xs text-muted-foreground mt-1">Learn & Grow</p>
+              </a>
+              <a href="https://kasinenisai.gumroad.com/" target="_blank" rel="noopener noreferrer" className="border border-border p-4 hover:border-foreground transition-colors cursor-pointer">
+                <div className="text-3xl mb-2">💼</div>
+                <h4 className="font-light text-foreground text-sm">Business Guides</h4>
+                <p className="text-xs text-muted-foreground mt-1">Professional Tools</p>
+              </a>
+              <a href="https://topmate.io/sai_royal/2" target="_blank" rel="noopener noreferrer" className="border border-border p-4 hover:border-foreground transition-colors cursor-pointer">
+                <div className="text-3xl mb-2">💻</div>
+                <h4 className="font-light text-foreground text-sm">Digital Products</h4>
+                <p className="text-xs text-muted-foreground mt-1">Tech Resources</p>
+              </a>
+            </div>
+
+            {/* Main Store Links */}
             <div className="grid gap-8 md:grid-cols-2">
               {/* Student Store */}
               <div className="border border-border p-8 bg-secondary hover:shadow-sm transition">
-                <h3 className="text-2xl font-medium text-foreground mb-4">
-                  Student Digital Store
+                <h3 className="text-2xl font-medium text-foreground mb-2">
+                  📚 Student Digital Store
                 </h3>
+                <p className="text-sm text-muted-foreground mb-3">topmate.io/sai_royal/2</p>
                 <p className="text-muted-foreground mb-6">
                   Access affordable learning resources, course materials, and study guides designed for students. Perfect for skill development and academic excellence.
                 </p>
@@ -161,27 +182,28 @@ export default async function Home() {
                   className="inline-block"
                 >
                   <Button className="bg-foreground text-background hover:bg-muted-foreground">
-                    Visit Student Store →
+                    Visit Store →
                   </Button>
                 </a>
               </div>
 
               {/* Business Store */}
               <div className="border border-border p-8 bg-secondary hover:shadow-sm transition">
-                <h3 className="text-2xl font-medium text-foreground mb-4">
-                  Business Resources Store
+                <h3 className="text-2xl font-medium text-foreground mb-2">
+                  💼 Business Resources Store
                 </h3>
+                <p className="text-sm text-muted-foreground mb-3">kasinenisai.gumroad.com</p>
                 <p className="text-muted-foreground mb-6">
                   Professional business tools, templates, and resources for entrepreneurs. Scale your business with our curated collection of digital assets and guides.
                 </p>
                 <a 
-                  href="https://kasinenisai.gumroad.com/?_gl=1*1wur0qi*_ga*MTEyMTUwNzIwNy4xNzgxMDI1OTU2*_ga_6LJN6D94N6*czE3ODEwMjU5NTYkbzEkZzEkdDE3ODEwMjU5NzkkajM3JGwwJGgw" 
+                  href="https://kasinenisai.gumroad.com/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
                   <Button className="bg-foreground text-background hover:bg-muted-foreground">
-                    Visit Business Store →
+                    Visit Store →
                   </Button>
                 </a>
               </div>
@@ -190,7 +212,7 @@ export default async function Home() {
             <div className="mt-12 text-center">
               <Link href="/affiliate">
                 <Button className="px-8 py-6 text-base bg-foreground text-background hover:bg-muted-foreground">
-                  Join Affiliate Program
+                  View All Categories & Join Program
                 </Button>
               </Link>
             </div>
