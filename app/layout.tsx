@@ -10,8 +10,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Zentech Services - Digital Solutions',
-  description: 'Professional digital services including web development, design, and custom solutions',
+  title: 'Zentech Services - Professional Digital Solutions',
+  description: 'Web development, product design, poster design, social media marketing, mobile app development, and affiliate marketing services in India',
+  keywords: 'web design, app development, digital marketing, poster design, affiliate marketing',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -38,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} bg-background`}>
+      <body className="font-sans antialiased bg-background">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

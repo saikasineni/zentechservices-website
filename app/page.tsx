@@ -4,6 +4,8 @@ import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { getPublicServices } from '@/app/actions/services'
 
+export const revalidate = 3600
+
 export default async function Home() {
   const services = await getPublicServices()
 
@@ -78,8 +80,60 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Affiliate Marketing Section */}
+        {/* Testimonials Section */}
         <section className="px-4 py-20 sm:px-6 lg:px-8 bg-secondary border-b border-border">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-16 text-center">
+              <h2 className="text-4xl font-light text-foreground">
+                Client Testimonials
+              </h2>
+              <div className="mt-2 h-1 w-16 bg-foreground mx-auto"></div>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3">
+              {[
+                {
+                  name: 'Rajesh Kumar',
+                  role: 'Business Owner',
+                  comment: 'Excellent website development. The team delivered exactly what we needed. Highly professional and responsive.',
+                  rating: 5
+                },
+                {
+                  name: 'Priya Sharma',
+                  role: 'Startup Founder',
+                  comment: 'Outstanding product design. They transformed our vision into reality with incredible attention to detail.',
+                  rating: 5
+                },
+                {
+                  name: 'Neha Singh',
+                  role: 'Marketing Manager',
+                  comment: 'Best social media promotion service! Our engagement increased by 150% in just 3 months.',
+                  rating: 5
+                }
+              ].map((testimonial, index) => (
+                <div key={index} className="border border-border p-8 bg-background">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5 fill-foreground" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4 font-light leading-relaxed">
+                    &quot;{testimonial.comment}&quot;
+                  </p>
+                  <div className="border-t border-border pt-4">
+                    <p className="font-medium text-foreground">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Affiliate Marketing Section */}
+        <section className="px-4 py-20 sm:px-6 lg:px-8 bg-background border-b border-border">
           <div className="mx-auto max-w-6xl">
             <div className="mb-16 text-center">
               <h2 className="text-4xl font-light text-foreground">
@@ -93,7 +147,7 @@ export default async function Home() {
 
             <div className="grid gap-8 md:grid-cols-2">
               {/* Student Store */}
-              <div className="border border-border p-8 bg-background hover:shadow-sm transition">
+              <div className="border border-border p-8 bg-secondary hover:shadow-sm transition">
                 <h3 className="text-2xl font-medium text-foreground mb-4">
                   Student Digital Store
                 </h3>
@@ -113,7 +167,7 @@ export default async function Home() {
               </div>
 
               {/* Business Store */}
-              <div className="border border-border p-8 bg-background hover:shadow-sm transition">
+              <div className="border border-border p-8 bg-secondary hover:shadow-sm transition">
                 <h3 className="text-2xl font-medium text-foreground mb-4">
                   Business Resources Store
                 </h3>
