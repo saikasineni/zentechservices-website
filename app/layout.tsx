@@ -10,8 +10,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Zentech Services - Digital Solutions',
+  description: 'Professional digital services including web development, design, and custom solutions',
   generator: 'v0.app',
   icons: {
     icon: [

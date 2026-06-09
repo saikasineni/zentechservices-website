@@ -1,37 +1,118 @@
-export default function Page() {
-  return (
-    <main className="flex min-h-screen items-center justify-center bg-black px-6 text-neutral-400">
-      <div className="flex w-full max-w-md flex-col items-start gap-8">
-        <svg
-          fill="currentColor"
-          viewBox="0 0 147 70"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          className="size-10 text-white"
-        >
-          <path d="M56 50.2031V14H70V60.1562C70 65.5928 65.5928 70 60.1562 70C57.5605 70 54.9982 68.9992 53.1562 67.1573L0 14H19.7969L56 50.2031Z" />
-          <path d="M147 56H133V23.9531L100.953 56H133V70H96.6875C85.8144 70 77 61.1856 77 50.3125V14H91V46.1562L123.156 14H91V0H127.312C138.186 0 147 8.81439 147 19.6875V56Z" />
-        </svg>
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
+import { getPublicServices } from '@/app/actions/services'
 
-        <div className="space-y-3">
-          <h1 className="text-balance text-2xl font-semibold tracking-tight text-white">
-            To get started, describe what you want to build.
-          </h1>
-          <p className="text-pretty text-sm leading-relaxed text-neutral-500">
-            This is the default page for a fresh v0 project. Open the prompt and
-            tell v0 what to create, or browse the{' '}
-            <a
-              href="https://v0.app/templates"
-              target="_blank"
-              rel="noreferrer"
-              className="text-neutral-300 underline underline-offset-4 hover:text-white"
-            >
-              Community
-            </a>{' '}
-            for inspiration.
-          </p>
-        </div>
-      </div>
-    </main>
+export default async function Home() {
+  const services = await getPublicServices()
+
+  return (
+    <>
+      <Navbar />
+      <main className="min-h-screen">
+        {/* Hero Section */}
+        <section className="border-b border-gray-200 bg-gradient-to-b from-blue-50 to-white px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                Digital Services for Your Business
+              </h1>
+              <p className="mt-6 text-lg text-gray-600">
+                Professional digital solutions to help your business grow. From web development to custom design, we&apos;ve got you covered.
+              </p>
+              <div className="mt-8 flex justify-center gap-4">
+                <Link href="/services">
+                  <Button size="lg">
+                    Explore Services
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline">
+                    Get in Touch
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Services */}
+        <section className="px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-bold text-gray-900">
+                Featured Services
+              </h2>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3">
+              {services.slice(0, 3).map((service) => (
+                <div key={service.id} className="rounded-lg border border-gray-200 p-6 hover:shadow-lg transition">
+                  {service.imageUrl && (
+                    <div className="mb-4 h-40 w-full bg-gray-200 rounded-lg overflow-hidden">
+                      <img
+                        src={service.imageUrl}
+                        alt={service.name}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {service.name}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-600">
+                    {service.description}
+                  </p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <span className="text-2xl font-bold text-blue-600">
+                      ${service.price}
+                    </span>
+                    <Link href={`/services/${service.slug}`}>
+                      <Button variant="outline" size="sm">
+                        View Details
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link href="/services">
+                <Button size="lg" variant="outline">
+                  View All Services
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="border-t border-gray-200 bg-blue-600 px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold text-white">
+              Ready to Get Started?
+            </h2>
+            <p className="mt-4 text-lg text-blue-100">
+              Let&apos;s discuss your project and find the perfect solution for your needs.
+            </p>
+            <div className="mt-8 flex justify-center gap-4">
+              <Link href="/contact">
+                <Button size="lg" variant="secondary">
+                  Contact Us
+                </Button>
+              </Link>
+              <Link href="/affiliate">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-blue-700">
+                  Join Affiliate Program
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   )
 }
